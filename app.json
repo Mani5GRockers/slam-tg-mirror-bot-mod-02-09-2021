@@ -7,7 +7,7 @@
       "telegram",
       "python"
     ],
-    "repository": "https://github.com/breakdowns/slam-tg-mirror-bot",
+    "repository": "https://github.com/mani66660/slam-tg-mirror-bot",
     "website": "https://github.com/breakdowns/slam-tg-mirror-bot",
     "success_url": "https://t.me/SlamMirrorSupport",
     "stack": "container",
