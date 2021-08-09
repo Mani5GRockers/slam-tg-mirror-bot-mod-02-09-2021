@@ -31,46 +31,75 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>Bot Uptime:</b> <code>{currentTime}</code>\n' \
-            f'<b>Total Disk Space:</b> <code>{total}</code>\n' \
-            f'<b>Used:</b> <code>{used}</code>  ' \
-            f'<b>Free:</b> <code>{free}</code>\n\n' \
-            f'<b>Upload:</b> <code>{sent}</code>\n' \
-            f'<b>Download:</b> <code>{recv}</code>\n\n' \
-            f'<b>CPU:</b> <code>{cpuUsage}%</code> ' \
-            f'<b>RAM:</b> <code>{memory}%</code> ' \
-            f'<b>DISK:</b> <code>{disk}%</code>'
+    stats = f'<b>╭──「  🚦 BOT STATS 🚦 」 </b>\n' \
+            f'<b>│</b>\n' \
+            f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
+            f'<b>├  🔊 Start Time :</b> {current}\n' \
+            f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
+            f'<b>├  🗂 Total Used Space : {used}</b>\n' \
+            f'<b>├  📂 Total Free Space : {free}</b>\n' \
+            f'<b>├  📑 Data Usage :</b>\n' \
+            f'<b>├  📥 Total Download : {recv}</b>\n' \
+            f'<b>├  📤 Total Upload : {sent}</b>\n' \
+            f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
+            f'<b>├  🚀 RAM : {memory}%</b>\n' \
+            f'<b>├  🗄 DISK : {disk}%</b>\n' \
+            f'<b>│</b>\n' \
+            f'<b>╰──「 Ⓜ️ @Mani5GRockers Ⓜ️ 」</b>'
+    update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
     sendMessage(stats, context.bot, update)
 
 
 def start(update, context):
     start_string = f'''
 This bot can mirror all your links to Google Drive!
+
+👲 Modded By: @Mani5GRockers
+
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-tg-mirror-bot")
-    buttons.buildbutton("Channel", "https://t.me/SlamMirrorUpdates")
+    buttons.buildbutton("🚦 Channel 🚦", "https://t.me/Mani5GRockers")
+    buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/aws_public_chat")
+    buttons.buildbutton("⚙️ ᴘʀɪɪɪɪʏᴏ ʙᴏᴛꜱ ⚙️", "http://t.me/mani5grockersbot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\nSince: <code>{uptime}</code>", context.bot, update)
-        else :
-            sendMarkup(start_string, context.bot, update, reply_markup)
+             sendMessage(f"Hey I'm AWS MIRROR ZONE BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
+           else :
+            update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
-        sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
+        sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>aws-mirror-zone-bot</b>.", context.bot, update, reply_markup)
 
 
+ update.effective_message.reply_photo("https://gitlab.awslink.in/api/logoposter.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
+
+@run_async
+def chat_list(update, context):
+    chatlist =''
+    chatlist += '\n'.join(str(id) for id in AUTHORIZED_CHATS)
+    sendMessage(f'<b>Authorized List:</b>\n{chatlist}\n', context.bot, update)
+
+
+@run_async
+def repo(update, context):
+    bot.send_message(update.message.chat_id,
+    reply_to_message_id=update.message.message_id,
+    text="🤷🤷🤷🤷", disable_web_page_preview=True)
+
+
+@run_async
 def restart(update, context):
     restart_message = sendMessage("Restarting, Please wait!", context.bot, update)
+    LOGGER.info(f'Restarting the Bot...')
     # Save restart message object in order to reply to it after restarting
-    with open(".restartmsg", "w") as f:
-        f.truncate(0)
-        f.write(f"{restart_message.chat.id}\n{restart_message.message_id}\n")
     fs_utils.clean_all()
-    os.execl(executable, executable, "-m", "bot")
+    with open('restart.pickle', 'wb') as status:
+        pickle.dump(restart_message, status)
+    execl(executable, executable, "-m", "bot")
+
 
 
 def ping(update, context):
@@ -181,14 +210,14 @@ def bot_help(update, context):
 
 botcmds = [
         (f'{BotCommands.HelpCommand}','Get Detailed Help'),
-        (f'{BotCommands.MirrorCommand}', 'Start Mirroring'),
-        (f'{BotCommands.TarMirrorCommand}','Start mirroring and upload as .tar'),
+        (f'{BotCommands.MirrorCommand}', 'New User Start Mirroring'),
+        (f'{BotCommands.TarMirrorCommand}','Start mirroring Magnet link, Direct link, Telegram files .zip and .tar more etc.'),
         (f'{BotCommands.UnzipMirrorCommand}','Extract files'),
         (f'{BotCommands.CloneCommand}','Copy file/folder to Drive'),
         (f'{BotCommands.CountCommand}','Count file/folder of Drive link'),
         (f'{BotCommands.DeleteCommand}','Delete file from Drive'),
         (f'{BotCommands.WatchCommand}','Mirror Youtube-dl support link'),
-        (f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as .tar'),
+        (f'{BotCommands.TarWatchCommand}','Mirror Youtube playlist link as .tar or .zip'),
         (f'{BotCommands.CancelMirror}','Cancel a task'),
         (f'{BotCommands.CancelAllCommand}','Cancel all tasks'),
         (f'{BotCommands.ListCommand}','Searches files in Drive'),
@@ -197,7 +226,7 @@ botcmds = [
         (f'{BotCommands.PingCommand}','Ping the Bot'),
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
-        (f'{BotCommands.TsHelpCommand}','Get help for Torrent search module')
+        (f'{BotCommands.TsHelpCommand}','Torrent Search Name')
     ]
 
 
