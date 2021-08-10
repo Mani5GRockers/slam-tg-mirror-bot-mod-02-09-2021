@@ -143,6 +143,8 @@ def get_readable_message():
                             f" | <b>🔄 Leechers :</b> <code>{download.torrent_info().num_leechs}</code>"
                     except:
                         pass
+                    msg += f'\n<b>👨‍🦱 Uploader: 👉 </b> <a href="tg://user?id={download.message.from_user.id}">{download.message.from_user.first_name}</a> (<code>{download.message.from_user.id}</code>)'
+                if download.status() == MirrorStatus.STATUS_DOWNLOADING:
                     msg += f"\n<b>🚫 𝐓𝐨 𝐒𝐭𝐨𝐩 :</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
                 msg += "\n\n"
                 if STATUS_LIMIT is not None:
