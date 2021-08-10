@@ -72,8 +72,6 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
             sendMarkup(start_string, context.bot, update, reply_markup)
     else :
         sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
-  
- update.effective_message.reply_photo("https://gitlab.awslink.in/api/logoposter.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
 
 @run_async
 def chat_list(update, context):
