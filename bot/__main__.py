@@ -68,8 +68,6 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
              sendMessage(f"Hey I'm AWS MIRROR ZONE BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
-                 else :
-            sendMarkup(start_string, context.bot, update, reply_markup)
            else :
             update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else :
