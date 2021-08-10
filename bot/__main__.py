@@ -31,32 +31,43 @@ def stats(update, context):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage('/').percent
-    stats = f'<b>Bot Uptime:</b> <code>{currentTime}</code>\n' \
-            f'<b>Total Disk Space:</b> <code>{total}</code>\n' \
-            f'<b>Used:</b> <code>{used}</code>  ' \
-            f'<b>Free:</b> <code>{free}</code>\n\n' \
-            f'<b>Upload:</b> <code>{sent}</code>\n' \
-            f'<b>Download:</b> <code>{recv}</code>\n\n' \
-            f'<b>CPU:</b> <code>{cpuUsage}%</code> ' \
-            f'<b>RAM:</b> <code>{memory}%</code> ' \
-            f'<b>DISK:</b> <code>{disk}%</code>'
+   stats = f'<b>╭──「 🚦 BOT STATS 🚦 」 </b>\n' \
+            f'<b>│</b>\n' \
+            f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
+            f'<b>├  🔊 Start Time :</b> {current}\n' \
+            f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
+            f'<b>├  🗂 Total Used Space : {used}</b>\n' \
+            f'<b>├  📂 Total Free Space : {free}</b>\n' \
+            f'<b>├  📑 Data Usage :</b>\n' \
+            f'<b>├  📥 Total Download : {recv}</b>\n' \
+            f'<b>├  📤 Total Upload : {sent}</b>\n' \
+            f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
+            f'<b>├  🚀 RAM : {memory}%</b>\n' \
+            f'<b>├  🗄 DISK : {disk}%</b>\n' \
+            f'<b>│</b>\n' \
+            f'<b>╰──「 Ⓜ️ @Mani5GRockers Ⓜ️ 」</b>'
     sendMessage(stats, context.bot, update)
 
 
 def start(update, context):
     start_string = f'''
 This bot can mirror all your links to Google Drive!
+
+👲 Modded By: @Mani5GRockers
+
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Repo", "https://github.com/breakdowns/slam-tg-mirror-bot")
-    buttons.buildbutton("Channel", "https://t.me/SlamMirrorUpdates")
+    buttons.buildbutton("💎 Website 💎", "https://bitly.awslink.in/mani5grockers")
+    buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/awsmirror")
+    buttons.buildbutton("Ⓜ️ Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/aws_public_chat")
+    buttons.buildbutton("⚙️ Mani5GRockers ʙᴏᴛ List ⚙️", "http://t.me/mani5grockersbot")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
-            sendMessage(f"Hey I'm Alive 🙂\nSince: <code>{uptime}</code>", context.bot, update)
+            sendMessage(f"Hey I'm AWS MIRROR BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
         else :
             sendMarkup(start_string, context.bot, update, reply_markup)
     else :
