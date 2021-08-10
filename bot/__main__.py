@@ -101,7 +101,7 @@ def bot_help(update, context):
 
 👉 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive.\n Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading\n
 
-👉 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download\n
+👉 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived  (.tar and .zip) version of the download\n
 
 👉 /{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive\n
 
