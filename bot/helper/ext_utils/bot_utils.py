@@ -123,15 +123,15 @@ def get_readable_message():
                 msg += f"<b>🗂 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲 :</b> <code>{download.name()}</code>"
                 msg += f"\n<b>🚦 𝐒𝐭𝐚𝐭𝐮𝐬 :</b> <i>{download.status()}</i>"
                 if download.status() != MirrorStatus.STATUS_ARCHIVING and download.status() != MirrorStatus.STATUS_EXTRACTING:
-                    msg += f"\n<code>{get_progress_bar_string(download)} {download.progress()}</code>"
+                    msg += f"\n<code>{get_progress_bar_string(download)} 〘{download.progress()}〙</code>"
                     if download.status() == MirrorStatus.STATUS_CLONING:
-                        msg += f"\n<b>♻️ Cloned:</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                        msg += f"\n<b>♻️ Cloned:</b> <code>〘{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}〙</code>"
                     elif download.status() == MirrorStatus.STATUS_UPLOADING:
-                        msg += f"\n<b>📤 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 :</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
+                        msg += f"\n<b>📤 𝐔𝐩𝐥𝐨𝐚𝐝𝐞𝐝 :</b> <code>〘{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}〙</code>"
                     else:
-                        msg += f"\n<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐝 :</b> <code>{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}</code>"
-                    msg += f"\n<b>🚀 𝐒𝐩𝐞𝐞𝐝 :</b> <code>{download.speed()}</code>" \
-                            f", <b>⏳ 𝐄𝐓𝐀 :</b> <code>{download.eta()}</code> "
+                        msg += f"\n<b>📥 𝐃𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐞𝐝 :</b> <code>〘{get_readable_file_size(download.processed_bytes())}</code> of <code>{download.size()}〙</code>"
+                    msg += f"\n<b>🚀 𝐒𝐩𝐞𝐞𝐝 :</b> <code>〘{download.speed()}〙</code>" \
+                            f", <b>⏳ 𝐄𝐓𝐀 :</b> <code>〘{download.eta()}〙</code> "
                     # if hasattr(download, 'is_torrent'):
                     try:
                         msg += f"\n<b>⚓️ 𝐒𝐞𝐞𝐝𝐞𝐫𝐬 :</b> <code>{download.aria_download().num_seeders}</code>" \
