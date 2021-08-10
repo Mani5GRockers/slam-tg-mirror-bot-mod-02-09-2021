@@ -68,9 +68,9 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
              sendMessage(f"Hey I'm AWS MIRROR ZONE BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
+     else :
+            sendMarkup(start_string, context.bot, update, reply_markup)
     else :
-         sendMarkup(start_string, context.bot, update, reply_markup)
-   else :
         sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
 
 
