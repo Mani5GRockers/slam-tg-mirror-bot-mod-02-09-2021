@@ -69,9 +69,10 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         if update.message.chat.type == "private" :
              sendMessage(f"Hey I'm AWS MIRROR ZONE BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
      else :
-            update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
+            sendMarkup(start_string, context.bot, update, reply_markup)
+    else :
+        sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
   
-
  update.effective_message.reply_photo("https://gitlab.awslink.in/api/logoposter.jpg", start_string, parse_mode=ParseMode.MARKDOWN)
 
 @run_async
