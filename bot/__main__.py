@@ -37,6 +37,7 @@ def stats(update, context):
             f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
             f'<b>├  🗂 Total Used Space : {used}</b>\n' \
             f'<b>├  📂 Total Free Space : {free}</b>\n' \
+            f'<b>├  📝 Data Usage 📝</b>\n\n' \
             f'<b>├  📥 Total Download : {recv}</b>\n' \
             f'<b>├  📤 Total Upload : {sent}</b>\n' \
             f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
@@ -95,50 +96,51 @@ def log(update, context):
 
 def bot_help(update, context):
     help_string_adm = f'''
-/{BotCommands.HelpCommand}: To get this message
-/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
-/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
-/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
-/{BotCommands.CloneCommand} [drive_url]: Copy file/folder to Google Drive
-/{BotCommands.CountCommand} [drive_url]: Count file/folder of Google Drive Links
-/{BotCommands.DeleteCommand} [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
-/{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help
-/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
-/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
-/{BotCommands.CancelAllCommand}: Cancel all running tasks
-/{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, If found replies with the link
-/{BotCommands.StatusCommand}: Shows a status of all the downloads
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
-/{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-/{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
-/{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
-/{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
-/{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
-/{BotCommands.RestartCommand}: Restart the bot
-/{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
-/{BotCommands.ConfigMenuCommand}: Get Info Menu about bot config (Owner Only)
-/{BotCommands.UpdateCommand}: Update Bot from Upstream Repo (Owner Only)
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
-/{BotCommands.ShellCommand}: Run commands in Shell (Terminal)
-/{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
-/{BotCommands.TsHelpCommand}: Get help for Torrent search module
+    \n🎀AWS MIRROR ZONE Help List 🎀 \n\n
+👉 /{BotCommands.HelpCommand}: To get this message
+👉 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
+👉 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+👉 /{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+👉 /{BotCommands.CloneCommand} [drive_url]: Copy file/folder to Google Drive
+👉 /{BotCommands.CountCommand} [drive_url]: Count file/folder of Google Drive Links
+👉 /{BotCommands.DeleteCommand} [drive_url]: Delete file from Google Drive (Only Owner & Sudo)
+👉 /{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help
+👉 /{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+👉 /{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
+👉 /{BotCommands.CancelAllCommand}: Cancel all running tasks
+👉 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, If found replies with the link
+👉 /{BotCommands.StatusCommand}: Shows a status of all the downloads
+👉 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+👉 /{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
+👉 /{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+👉 /{BotCommands.UnAuthorizeCommand}: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+👉 /{BotCommands.AuthorizedUsersCommand}: Show authorized users (Only Owner & Sudo)
+👉 /{BotCommands.AddSudoCommand}: Add sudo user (Only Owner)
+👉 /{BotCommands.RmSudoCommand}: Remove sudo users (Only Owner)
+👉 /{BotCommands.RestartCommand}: Restart the bot
+👉 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
+👉 /{BotCommands.ConfigMenuCommand}: Get Info Menu about bot config (Owner Only)
+👉 /{BotCommands.UpdateCommand}: Update Bot from Upstream Repo (Owner Only)
+👉 /{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+👉 /{BotCommands.ShellCommand}: Run commands in Shell (Terminal)
+👉 /{BotCommands.ExecHelpCommand}: Get help for Executor module (Only Owner)
+👉 /{BotCommands.TsHelpCommand}: Get help for Torrent search module
 '''
 
     help_string = f'''
-    🎀AWS MIRROR ZONE Help List 🎀
-★ /{BotCommands.HelpCommand}: To get this message
-★ /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
-★ /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
-★ /{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
-★ /{BotCommands.CloneCommand} [drive_url]: Copy file/folder to Google Drive
-★ /{BotCommands.CountCommand} [drive_url]: Count file/folder of Google Drive Links
-★ /{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help
-★ /{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
-★ /{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
-🤖 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, If found replies with the link
-🤖 /{BotCommands.StatusCommand}: Shows a status of all the downloads
-✅ /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+    \n🎀AWS MIRROR ZONE Help List 🎀 \n\n
+👉 /{BotCommands.HelpCommand}: To get this message
+👉 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive. Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading
+👉 /{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+👉 /{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to Google Drive
+👉 /{BotCommands.CloneCommand} [drive_url]: Copy file/folder to Google Drive
+👉 /{BotCommands.CountCommand} [drive_url]: Count file/folder of Google Drive Links
+👉 /{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help
+👉 /{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+👉 /{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
+👉 /{BotCommands.ListCommand} [search term]: Searches the search term in the Google Drive, If found replies with the link
+👉 /{BotCommands.StatusCommand}: Shows a status of all the downloads
+👉 /{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
 👉 /{BotCommands.PingCommand}: Check how long it takes to Ping the Bot
 👉 /{BotCommands.TsHelpCommand}: Get help for Torrent search module
 '''
