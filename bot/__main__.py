@@ -34,7 +34,6 @@ def stats(update, context):
     stats = f'<b>╭──「  🚦 BOT STATS 🚦 」 </b>\n' \
             f'<b>│</b>\n' \
             f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
-            f'<b>├  🔊 Start Time :</b> {current}\n' \
             f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
             f'<b>├  🗂 Total Used Space : {used}</b>\n' \
             f'<b>├  📂 Total Free Space : {free}</b>\n' \
