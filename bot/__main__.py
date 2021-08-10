@@ -96,7 +96,7 @@ def log(update, context):
 
 def bot_help(update, context):
     help_string_adm = f'''
-    \n🎀AWS MIRROR ZONE Help List 🎀 \n
+    \n🎀AWS MIRROR ZONE Help 🎀 \n
 👉 /{BotCommands.HelpCommand}: To get this message\n
 
 👉 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive.\n Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading\n
@@ -155,7 +155,7 @@ def bot_help(update, context):
 '''
 
     help_string = f'''
-    \n🎀AWS MIRROR ZONE Help List 🎀 \n
+    \n🎀AWS MIRROR ZONE Help 🎀 \n
 👉 /{BotCommands.HelpCommand}: To get this message\n
 
 👉 /{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to Google Drive.\n Use /{BotCommands.MirrorCommand} qb to mirror with qBittorrent, and use /{BotCommands.MirrorCommand} qbs to select files before downloading\n
