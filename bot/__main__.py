@@ -37,16 +37,14 @@ def stats(update, context):
             f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
             f'<b>├  🗂 Total Used Space : {used}</b>\n' \
             f'<b>├  📂 Total Free Space : {free}</b>\n' \
-            f'<b>├  📑 Data Usage :</b>\n' \
             f'<b>├  📥 Total Download : {recv}</b>\n' \
             f'<b>├  📤 Total Upload : {sent}</b>\n' \
             f'<b>├  🖥️ CPU : {cpuUsage}%</b>\n' \
             f'<b>├  🚀 RAM : {memory}%</b>\n' \
             f'<b>├  🗄 DISK : {disk}%</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──「 Ⓜ️ @Mani5GRockers Ⓜ️ 」</b>'
+            f'<b>╰──「 👨‍💻 @Mani5GRockers 👨‍💻 」</b>'
     sendMessage(stats, context.bot, update)
-    update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
 
 def start(update, context):
@@ -58,22 +56,20 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("💎 Website 💎", "https://bitly.awslink.in/mani5grockers")
     buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/awsmirror")
     buttons.buildbutton("Ⓜ️ Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/aws_public_chat")
-    buttons.buildbutton("⚙️ Mani5GRockers ʙᴏᴛ List ⚙️", "http://t.me/mani5grockersbot")
+    buttons.buildbutton("⚙️ AWS BOT List ⚙️", "http://t.me/mani5grockersbot")
+    buttons.buildbutton("💎 Website 💎", "https://bitly.awslink.in/mani5grockers")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
     if CustomFilters.authorized_user(update) or CustomFilters.authorized_chat(update):
         if update.message.chat.type == "private" :
             sendMessage(f"Hey I'm AWS MIRROR BOT\n\n➩ Developer by 🏆 Mani5GRockers 👨‍💻\n\n➩ /help\nSince: <code>{uptime}</code>", context.bot, update)
-            else :
-            update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
         else :
             sendMarkup(start_string, context.bot, update, reply_markup)
     else :
-        sendMarkup(f"Oops! not a Authorized user.\nPlease deploy your own <b>slam-tg-mirror-bot</b>.", context.bot, update, reply_markup)
+        sendMarkup(f"🔒 Oops! not a Authorized user.\n🔐 Please contact Bot developer 👉 <b>@Mani5GRockers</b>.", context.bot, update, reply_markup)
 
 
 def restart(update, context):
