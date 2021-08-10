@@ -98,11 +98,10 @@ def get_progress_bar_string(status):
     p = min(max(p, 0), 100)
     cFull = p // 8
     cPart = p % 8 - 1
-    p_str = FINISHED_PROGRESS_STR * cFull
+    p_str = '🟩' * cFull
     if cPart >= 0:
-        # p_str += PROGRESS_INCOMPLETE[cPart]
-        p_str += FINISHED_PROGRESS_STR
-    p_str += UNFINISHED_PROGRESS_STR * (PROGRESS_MAX_SIZE - cFull)
+        p_str += PROGRESS_INCOMPLETE[cPart]
+    p_str += '🟨' * (PROGRESS_MAX_SIZE - cFull)
     p_str = f"[{p_str}]"
     return p_str
 
@@ -141,7 +140,7 @@ def get_readable_message():
                         pass
                     try:
                         msg += f"\n<b>⚓️ 𝐒𝐞𝐞𝐝𝐞𝐫𝐬 :</b> <code>{download.torrent_info().num_seeds}</code>" \
-                            f" | <b>🔄 𝐏𝐞𝐞𝐫𝐬 :</b> <code>{download.torrent_info().num_leechs}</code>"
+                            f" | <b>🔄 Leechers :</b> <code>{download.torrent_info().num_leechs}</code>"
                     except:
                         pass
                     msg += f"\n<b>🚫 𝐓𝐨 𝐒𝐭𝐨𝐩 :</b> <code>/{BotCommands.CancelMirror} {download.gid()}</code>"
