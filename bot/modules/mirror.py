@@ -289,7 +289,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-          sendMessage('❌ Opps 🤦! Not Like That ❌\n\n💁‍♀️ 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑 ?\n\n📖 Read Document 📖\n\n 👉 Visit Now 🔗 https://awslink.in/awsmirrorzonehelp', bot, update)
+          sendMessage('❌ Opps 🤦! Not Like That ❌\n\n💁‍♀️ 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑 ?\n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp', bot, update)
     return
 
     try:
