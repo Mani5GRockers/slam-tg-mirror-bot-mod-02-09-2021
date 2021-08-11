@@ -9,6 +9,25 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/breakdowns/mega-sdk-python?label=Docker%20Pull)
 [![Channel](https://img.shields.io/badge/Join%20Channel-!-red)](https://t.me/SlamMirrorUpdates)
 
+## MY EDIT PAGE
+
+- BOT Start Message, HELP COMMENTS INFO, STATS NEW STYLE, https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/__main__.py
+- FINISHED_PROGRESS_STR, UNFINISHED_PROGRESS_STR, 🟩🟨, MirrorStatus, ✥═══ @Mani5GRockers ═══✥, 〘〙, STATUS_LIMIT ⬅️➡️, Uploader - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/helper/ext_utils/bot_utils.py
+- ✥════ @Mani5GRockers ════✥, hide cpu, ram, disk - https://github.com/mani66660/slam-tg-mirror-bot/edit/master/bot/helper/telegram_helper/message_utils.py
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+- 
+```
+
+
 **Slam Tg Mirror Bot** is a _multipurpose_ Telegram Bot writen in Python for mirroring files on the Internet to our beloved Google Drive.
 
 # Features supported:
