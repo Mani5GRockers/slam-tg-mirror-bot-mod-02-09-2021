@@ -289,7 +289,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-               bot.send_message(update.message.chat_id, text='<b>❌ Opps 🤦! Not Like That</b>\n\nCheck 👉 <a href="https://telegra.ph/HOW-TO-MIRROR-08-11"> 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑?</a>',disable_web_page_preview=True, reply_to_message_id=update.message.message_id, parse_mode='HTMl')
+               send_message(update.message.chat_id, text='<b>❌ Opps 🤦! Not Like That</b>\n\nCheck 👉 <a href="https://telegra.ph/HOW-TO-MIRROR-08-11"> 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑?</a>',bot, update, disable_web_page_preview=True, reply_to_message_id=update.message.message_id, parse_mode='HTMl')
         return
 
     try:
