@@ -98,7 +98,7 @@ def log(update, context):
 
 def bot_help(update, context):
     help_string_adm = f'''
-    \n🎀AWS MIRROR ZONE Help 🎀 
+    \n🎀 AWS MIRROR ZONE Help 🎀 
     
     ✥════ @Mani5GRockers ════✥
     
@@ -162,7 +162,7 @@ def bot_help(update, context):
 '''
 
     help_string = f'''
-    \n🎀AWS MIRROR ZONE Help 🎀
+    \n🎀 AWS MIRROR ZONE Help 🎀
     
     ✥════ @Mani5GRockers ════✥
     
