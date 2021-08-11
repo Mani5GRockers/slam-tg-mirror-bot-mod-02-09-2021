@@ -71,7 +71,7 @@ def update_all_messages():
     free = get_readable_file_size(free)
     currentTime = get_readable_time(time.time() - botStartTime)
     msg, buttons = get_readable_message()
-    msg += f"<b>✥════ @Mani5GRockers ════✥ \n\n</b>"
+    msg += f"<b>\n✥════ @Mani5GRockers ════✥ \n\n</b>"
     #msg += f"<b>CPU:</b> <code>{psutil.cpu_percent()}%</code>" \
            #f" <b>RAM:</b> <code>{psutil.virtual_memory().percent}%</code>" \
            #f" <b>DISK:</b> <code>{psutil.disk_usage('/').percent}%</code>"
