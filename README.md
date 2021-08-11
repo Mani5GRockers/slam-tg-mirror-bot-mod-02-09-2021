@@ -13,7 +13,7 @@
 - BOT Start Message, HELP COMMENTS INFO, STATS NEW STYLE, https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/__main__.py
 - FINISHED_PROGRESS_STR, UNFINISHED_PROGRESS_STR, 🟩🟨, MirrorStatus, ✥═══ @Mani5GRockers ═══✥, 〘〙, STATUS_LIMIT ⬅️➡️, Uploader - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/helper/ext_utils/bot_utils.py
 - ✥════ @Mani5GRockers ════✥, hide cpu, ram, disk - https://github.com/mani66660/slam-tg-mirror-bot/edit/master/bot/helper/telegram_helper/message_utils.py
-- 
+- 👤 Uploader: </b>👉 {uname}\n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠, download has been stopped</b>:\n\n🎄 <b>Reason - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/mirror.py
 - 
 - 
 - 
