@@ -1,6 +1,6 @@
 [![Slam](https://gitlab.awslink.in/api/logoposter.jpg)](https://youtu.be/Pk_TthHfLeE)
 
-# Slam Tg Mirror Bot
+# AWS MIRROR ZONE BOT
 ![GitHub Repo stars](https://img.shields.io/github/stars/breakdowns/slam-tg-mirror-bot?color=blue&style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/breakdowns/slam-tg-mirror-bot?color=green&style=flat)
 ![GitHub watchers](https://img.shields.io/github/watchers/breakdowns/slam-tg-mirror-bot)
