@@ -16,7 +16,7 @@
 
 - /mirror ✥════ @Mani5GRockers ════✥, hide cpu, ram, disk - https://github.com/mani66660/slam-tg-mirror-bot/edit/master/bot/helper/telegram_helper/message_utils.py
 
-- /mirror mirror wrong url, name replay msg  sendMessage('❌ Opps 🤦! Not Like That\n\n𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑\n\n📝 Check 👉 https://awslink.in/awsmirrorzonehelp/n/n', bot, update), 👤 Uploader: </b>👉 {uname}\n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠, download has been stopped</b>:\n\n🎄 <b>Reason - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/mirror.py
+- /mirror mirror wrong url, name replay msg  sendMessage('❌ Opps 🤦! Not Like That ❌\n\n💁‍♀️ 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑 ?\n\n📖 Read Now 🔗 https://awslink.in/awsmirrorzonehelp', bot, update), 👤 Uploader: </b>👉 {uname}\n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠, download has been stopped</b>:\n\n🎄 <b>Reason - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/mirror.py
 
 - /watch commment msg added - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/watch.py
 - 
