@@ -290,7 +290,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-        sendMessage("𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝚙𝚕𝚎𝚊𝚜𝚎 😐\n\n𝙸𝚏 𝚢𝚘𝚞 𝚍𝚘𝚗'𝚝 𝚔𝚗𝚘𝚠 𝙷𝚘𝚠 𝚝𝚘 𝙼𝚒𝚛𝚛𝚘𝚛 𝚊𝚗𝚍 𝚞𝚜𝚎 𝚋𝚘𝚝 𝚝𝚑𝚎𝚗 𝚌𝚑𝚎𝚌𝚔 \n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp", bot, update)
+        sendMessage("❌ 𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝚙𝚕𝚎𝚊𝚜𝚎 😐\n\n👉 𝙸𝚏 𝚢𝚘𝚞 𝚍𝚘𝚗'𝚝 𝚔𝚗𝚘𝚠 𝙷𝚘𝚠 𝚝𝚘 𝙼𝚒𝚛𝚛𝚘𝚛 𝚊𝚗𝚍 𝚞𝚜𝚎 𝚋𝚘𝚝 𝚝𝚑𝚎𝚗 \n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp", bot, update)
         return
 
     try:
@@ -319,7 +319,7 @@ def _mirror(bot, update, isTar=False, extract=False):
             limit = TAR_UNZIP_LIMIT
             limit = limit.split(' ', maxsplit=1)
             limitint = int(limit[0])
-            msg = f'Failed, Tar/Unzip limit is {TAR_UNZIP_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}.'
+            msg = f'❌ Failed, Tar/Unzip limit is {TAR_UNZIP_LIMIT}.\nYour File/Folder size is {get_readable_file_size(size)}.'
             if 'G' in limit[1] or 'g' in limit[1]:
                 if size > limitint * 1024**3:
                     sendMessage(msg, listener.bot, listener.update)
@@ -340,10 +340,9 @@ def _mirror(bot, update, isTar=False, extract=False):
     elif bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage("Mega folder are blocked!", bot, update)
+            sendMessage(f"<b>📥 Mega.nz Link Has Been Added To Download Queue\n\n⛔ Only 2 Download At A Time Otherwise Ban.\n\n‼️ Do Not Forget To Read Mega Download Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
         elif BLOCK_MEGA_LINKS:
-            sendMessage("Mega links are blocked!", bot, update)
-        else:
+        sendMessage(f"<b>📥 Your URL Link Has Been Added To Download Queue.\n\nAWS Mirror Size Is <u>60GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)        else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
 
