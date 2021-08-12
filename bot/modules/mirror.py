@@ -274,14 +274,13 @@ def _mirror(bot, update, isTar=False, extract=False):
                 file = i
                 break
 
-         if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
+          if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
             if file is not None:
                 if file.mime_type != "application/x-bittorrent":
                     listener = MirrorListener(bot, update, pswd, isTar, extract)
                     tg_downloader = TelegramDownloadHelper(listener)
                     ms = update.message
                     tg_downloader.add_download(ms, f'{DOWNLOAD_DIR}{listener.uid}/', name)
-                    sendMessage(f"<b>📥 Your Telegram File Has Been Added To Download Queue.\n\n‼️ Do Not Forget To Read Group Rules.\n\n ✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
                     return
                 else:
                     if qbit:
