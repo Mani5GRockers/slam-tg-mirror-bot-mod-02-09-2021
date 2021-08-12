@@ -28,7 +28,25 @@
 - 
 - 
 - 
+    
+    # Mirrorbot-Repos - all good repos in one place
+- Normal
+- https://github.com/iamLiquidX/MirrorX
 
+- https://github.com/KenHV/Mirror-Bot
+
+- https://github.com/lzzy12/python-aria-mirror-bot
+
+- Custom Mods
+- https://github.com/smpriiiyo/priiiyo-mirror-bot
+
+- https://github.com/breakdowns/slam-mirrorbot
+- 
+- 
+- 
+- 
+- 
+    
 **Slam Tg Mirror Bot** is a _multipurpose_ Telegram Bot writen in Python for mirroring files on the Internet to our beloved Google Drive.
 
 # Features supported:
