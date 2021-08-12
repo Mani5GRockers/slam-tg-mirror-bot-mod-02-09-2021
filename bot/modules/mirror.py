@@ -144,11 +144,11 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str, size, files, folders, typ):
         with download_dict_lock:
-            msg = f'<b>🗂 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲: </b><code>{download_dict[self.uid].name()}</code>\n<b>╔● 🗃 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞: </b><code>{size}</code>'
+            msg = f'<b>🗂 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲: </b><code>{download_dict[self.uid].name()}</code>\n<b>🗃 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
-                msg += '\n<b>╟● ⚙️ 𝐓𝐲𝐩𝐞: </b><code>🗂 Folder</code>'
-                msg += f'\n<b>╟● 📚 𝐒𝐮𝐛𝐅𝐨𝐥𝐝𝐞𝐫𝐬: </b><code>{folders}</code>'
-                msg += f'\n<b>╟● 🗂 𝐅𝐢𝐥𝐞𝐬 : </b><code>{files}</code>'
+                msg += '\n<b>⚙️ 𝐓𝐲𝐩𝐞: </b><code>🗂 Folder</code>'
+                msg += f'\n<b>📚 𝐒𝐮𝐛𝐅𝐨𝐥𝐝𝐞𝐫𝐬: </b><code>{folders}</code>'
+                msg += f'\n<b>🗂 𝐅𝐢𝐥𝐞𝐬 : </b><code>{files}</code>'
             else:
                 msg += f'\n<b>⚙️ 𝐓𝐲𝐩𝐞 : </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
@@ -191,7 +191,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>╚ 👤 Uploader: </b>👉 {uname}\n\n✅ #Uploaded To Team Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠 🙂\n\n <b>✥════ @Mani5GRockers ════✥</b>'
+                msg += f'\n\n<b>👤 Uploader: </b>👉 {uname}\n\n✅ #Uploaded To Team Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠 🙂\n\n <b>✥════ @Mani5GRockers ════✥</b>'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
@@ -340,9 +340,9 @@ def _mirror(bot, update, isTar=False, extract=False):
     elif bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage("📥 Mega.nz Link Has Been Added To Download Queue\n\n⛔ Only 2 Download At A Time Otherwise Ban.\n\n‼️ Do Not Forget To Read Mega Download Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}", bot, update)
+            sendMessage("Mega folder are blocked!", bot, update)
         elif BLOCK_MEGA_LINKS:
-            sendMessage("📥 Your URL Link Has Been Added To Download Queue.\n\n☁️ AWS Mirror Size Is <u>500GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}", bot, update)
+            sendMessage("Mega links are blocked bcoz mega downloading is too much unstable and buggy. mega support will be added back after fix", bot, update)
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
@@ -353,7 +353,7 @@ def _mirror(bot, update, isTar=False, extract=False):
 
     else:
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener, name)
-        sendStatusMessage(update, bot)
+        sendStatusMessage(f"<b>📥 Your URL Link Has Been Added To Download Queue.\n\nAWS Mirror Size Is <u>500GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
 
 
 def mirror(update, context):
