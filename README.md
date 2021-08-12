@@ -12,7 +12,7 @@
 ## MY EDIT PAGE
 - /help BOT Start Message, HELP COMMENTS INFO, STATS NEW STYLE, https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/__main__.py
 
-- /mirror FINISHED_PROGRESS_STR, UNFINISHED_PROGRESS_STR, 🟩🟨, MirrorStatus, ✥═══ @Mani5GRockers ═══✥, 〘〙, STATUS_LIMIT ⬅️➡️, Uploader - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/helper/ext_utils/bot_utils.py
+- /mirror FINISHED_PROGRESS_STR, UNFINISHED_PROGRESS_STR, 🟩🟨, ╔●╟●╚●╚═●, MirrorStatus, ✥═══ @Mani5GRockers ═══✥, 〘〙, STATUS_LIMIT ⬅️➡️, Uploader - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/helper/ext_utils/bot_utils.py
 
 - /mirror ✥════ @Mani5GRockers ════✥, hide cpu, ram, disk - https://github.com/mani66660/slam-tg-mirror-bot/edit/master/bot/helper/telegram_helper/message_utils.py
 
