@@ -149,6 +149,7 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += '\n<b>╟● ⚙️ 𝐓𝐲𝐩𝐞: </b><code>🗂 Folder</code>'
                 msg += f'\n<b>╟● 📚 𝐒𝐮𝐛𝐅𝐨𝐥𝐝𝐞𝐫𝐬: </b><code>{folders}</code>'
                 msg += f'\n<b>╟● 🗂 𝐅𝐢𝐥𝐞𝐬 : </b><code>{files}</code>'
+                msg += f'\n<b>╟● </b>
             else:
                 msg += f'\n<b>⚙️ 𝐓𝐲𝐩𝐞 : </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
@@ -191,7 +192,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>👤 Uploader: </b>👉 {uname}\n\n✅ #Uploaded To Team Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠 🙂\n\n <b>✥════ @Mani5GRockers ════✥</b>'
+                msg += f'\n\n<b>╚ 👤 Uploader: </b>👉 {uname}\n\n✅ #Uploaded To Team Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠 🙂\n\n <b>✥════ @Mani5GRockers ════✥</b>'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
