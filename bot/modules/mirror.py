@@ -149,7 +149,6 @@ class MirrorListener(listeners.MirrorListeners):
                 msg += '\n<b>╟● ⚙️ 𝐓𝐲𝐩𝐞: </b><code>🗂 Folder</code>'
                 msg += f'\n<b>╟● 📚 𝐒𝐮𝐛𝐅𝐨𝐥𝐝𝐞𝐫𝐬: </b><code>{folders}</code>'
                 msg += f'\n<b>╟● 🗂 𝐅𝐢𝐥𝐞𝐬 : </b><code>{files}</code>'
-                msg += f'\n<b>╟● </b>
             else:
                 msg += f'\n<b>⚙️ 𝐓𝐲𝐩𝐞 : </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
