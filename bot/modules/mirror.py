@@ -340,9 +340,10 @@ def _mirror(bot, update, isTar=False, extract=False):
     elif bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage(f"<b>📥 Mega.nz Link Has Been Added To Download Queue\n\n⛔ Only 2 Download At A Time Otherwise Ban.\n\n‼️ Do Not Forget To Read Mega Download Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
+            sendMessage("📥 Mega.nz Link Has Been Added To Download Queue\n\n⛔ Only 2 Download At A Time Otherwise Ban.\n\n‼️ Do Not Forget To Read Mega Download Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}", bot, update)
         elif BLOCK_MEGA_LINKS:
-        sendMessage(f"<b>📥 Your URL Link Has Been Added To Download Queue.\n\nAWS Mirror Size Is <u>60GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)        else:
+            sendMessage("📥 Your URL Link Has Been Added To Download Queue.\n\n☁️ AWS Mirror Size Is <u>500GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}", bot, update)
+        else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
 
