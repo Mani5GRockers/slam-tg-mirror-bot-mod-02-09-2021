@@ -281,9 +281,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                     tg_downloader = TelegramDownloadHelper(listener)
                     ms = update.message
                     tg_downloader.add_download(ms, f'{DOWNLOAD_DIR}{listener.uid}/', name)
-                     sendMessage(f"<b>📥 Your Telegram File Has Been Added To Download Queue.\n\n‼️ Do Not Forget To Read Group Rules.\n\n ✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
-                    if len(Interval) == 0:
-                        Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
+                    sendMessage(f"<b>📥 Your Telegram File Has Been Added To Download Queue.\n\n‼️ Do Not Forget To Read Group Rules.\n\n ✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
                     return
                 else:
                     if qbit:
