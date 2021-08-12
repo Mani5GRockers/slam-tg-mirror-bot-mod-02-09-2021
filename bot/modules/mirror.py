@@ -273,8 +273,7 @@ def _mirror(bot, update, isTar=False, extract=False):
             if i is not None:
                 file = i
                 break
-
-          if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
+if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
             if file is not None:
                 if file.mime_type != "application/x-bittorrent":
                     listener = MirrorListener(bot, update, pswd, isTar, extract)
@@ -290,7 +289,7 @@ def _mirror(bot, update, isTar=False, extract=False):
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-        sendMessage("𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝚙𝚕𝚎𝚊𝚜𝚎 😐\n\n𝙸𝚏 𝚢𝚘𝚞 𝚍𝚘𝚗'𝚝 𝚔𝚗𝚘𝚠 𝙷𝚘𝚠 𝚝𝚘 𝙼𝚒𝚛𝚛𝚘𝚛 𝚊𝚗𝚍 𝚞𝚜𝚎 𝚋𝚘𝚝 𝚝𝚑𝚎𝚗 𝚌𝚑𝚎𝚌𝚔 \n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp", bot, update)
+        sendMessage('No download source provided', bot, update)
         return
     
     try:
