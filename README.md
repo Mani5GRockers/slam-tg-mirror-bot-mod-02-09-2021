@@ -33,6 +33,10 @@
 - Normal
 - https://github.com/iamLiquidX/MirrorX
 
+- https://github.com/breakdowns/slam-tg-mirror-bot
+    
+- 
+    
 - https://github.com/KenHV/Mirror-Bot
 
 - https://github.com/lzzy12/python-aria-mirror-bot
