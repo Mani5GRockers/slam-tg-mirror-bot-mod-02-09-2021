@@ -20,18 +20,18 @@ def cloneNode(update, context):
             sendMessage(res, context.bot, update)
             return
         if STOP_DUPLICATE:
-            LOGGER.info(f"Checking File/Folder if already in Drive...")
+            LOGGER.info(f"🔍 Checking File/Folder if already in ☁️ Drive...")
             smsg, button = gd.drive_list(name)
             if smsg:
-                msg3 = "File/Folder is already available in Drive.\nHere are the search results:"
+                msg3 = "🗂 File/Folder is already available in ☁️ Drive.\n👉 Here are the search results 👇"
                 sendMarkup(msg3, context.bot, update, button)
                 return
         if CLONE_LIMIT is not None:
-            LOGGER.info(f"Checking File/Folder Size...")
+            LOGGER.info(f"📚 Checking File/Folder Size...")
             limit = CLONE_LIMIT
             limit = limit.split(' ', maxsplit=1)
             limitint = int(limit[0])
-            msg2 = f'Failed, Clone limit is {CLONE_LIMIT}.\nYour File/Folder size is {get_readable_file_size(clonesize)}.'
+            msg2 = f'❌ Failed, Clone limit is {CLONE_LIMIT}.\nYour File/Folder size is {get_readable_file_size(clonesize)}.'
             if 'G' in limit[1] or 'g' in limit[1]:
                 if clonesize > limitint * 1024**3:
                     sendMessage(msg2, context.bot, update)
@@ -41,7 +41,7 @@ def cloneNode(update, context):
                     sendMessage(msg2, context.bot, update)
                     return              
         if files < 15:
-            msg = sendMessage(f"Cloning: <code>{link}</code>", context.bot, update)
+            msg = sendMessage(f"☁️ Cloning: <code>{link}</code>", context.bot, update)
             result, button = gd.clone(link)
             deleteMessage(context.bot, msg)
         else:
@@ -69,7 +69,7 @@ def cloneNode(update, context):
         else:
             uname = f'<a href="tg://user?id={update.message.from_user.id}">{update.message.from_user.first_name}</a>'
         if uname is not None:
-            cc = f'\n\ncc: {uname}'
+            cc = f'\n\n👤 Uploader: 👉 {username}'
             men = f'{uname} '
         if button == "cancelled" or button == "":
             sendMessage(men + result, context.bot, update)
