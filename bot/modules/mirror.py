@@ -175,7 +175,7 @@ class MirrorListener(listeners.MirrorListeners):
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_urls}&format=text').text
                         buttons.buildbutton("🚀 ɪɴᴅᴇx ʟɪɴᴋ 🚀", siurl)
                         if VIEW_LINK:
-                            buttons.buildbutton("🌐 View Link", siurls)
+                            buttons.buildbutton("🌐 View Link 🌐", siurls)
                     else:
                         buttons.buildbutton("🚀 ɪɴᴅᴇx ʟɪɴᴋ 🚀", share_url)
                         if VIEW_LINK:
@@ -345,14 +345,14 @@ if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
-            sendMessage(f"<b>📥 Mega.nz Link Has Been Added To Download Queue\n\n⛔ Only 2 Download At A Time Otherwise Ban.\n\n‼️ Do Not Forget To Read Mega Download Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
+
     elif qbit and (bot_utils.is_magnet(link) or os.path.exists(link)):
         qbit = qbittorrent()
         qbit.add_torrent(link, f'{DOWNLOAD_DIR}{listener.uid}/', listener, qbitsel)
 
     else:
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener, name)
-       sendMessage(f"<b>📥 Your URL Link Has Been Added To Download Queue.\n\nⓂ️ AWS Mirror Zone Size Is <u>500GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
+        sendStatusMessage(update, bot)
 
 
 def mirror(update, context):
