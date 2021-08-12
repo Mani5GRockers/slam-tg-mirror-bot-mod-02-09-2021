@@ -60,9 +60,9 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
     buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/awsmirror")
-    buttons.buildbutton("Ⓜ️ Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/aws_public_chat")
+    buttons.buildbutton("🦸 Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ 🦸‍♂️", "https://t.me/aws_public_chat")
     buttons.buildbutton("⚙️ AWS BOT List ⚙️", "http://t.me/mani5grockersbot")
-    buttons.buildbutton("💎 Website 💎", "https://bitly.awslink.in/mani5grockers")
+    buttons.buildbutton("🌐 Website 🌐", "https://bitly.awslink.in/mani5grockers")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
     LOGGER.info('UID: {} - UN: {} - MSG: {}'.format(update.message.chat.id, update.message.chat.username, update.message.text))
     uptime = get_readable_time((time.time() - botStartTime))
