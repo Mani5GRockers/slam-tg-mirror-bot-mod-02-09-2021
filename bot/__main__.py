@@ -34,9 +34,9 @@ def stats(update, context):
     stats = f'<b>╭──「  🚦 BOT STATS 🚦 」 </b>\n' \
             f'<b>│</b>\n' \
             f'<b>├  ⏰ Bot Uptime : {currentTime}</b>\n' \
-            f'<b>├  🗄 Total Disk Space : {total}</b>\n' \
-            f'<b>├  🗂 Total Used Space : {used}</b>\n' \
-            f'<b>├  📂 Total Free Space : {free}</b>\n' \
+            f'<b>├  🗄 Total Disk : {total}</b>\n' \
+            f'<b>├  🗂 Total Used : {used}</b>\n' \
+            f'<b>├  📂 Total Free : {free}</b>\n' \
             f'<b>│</b>\n' \
             f'<b>├  📝 Data Usage 📝</b>\n' \
             f'<b>│</b>\n' \
@@ -46,7 +46,7 @@ def stats(update, context):
             f'<b>├  🚀 RAM : {memory}%</b>\n' \
             f'<b>├  🗄 DISK : {disk}%</b>\n' \
             f'<b>│</b>\n' \
-            f'<b>╰──「 👨‍💻 @Mani5GRockers 👨‍💻 」</b>'
+            f'<b>╰──「 👨‍💻 @Mani5GRockers 」</b>'
     sendMessage(stats, context.bot, update)
 
 
