@@ -274,26 +274,27 @@ def _mirror(bot, update, isTar=False, extract=False):
                 file = i
                 break
 
-        if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
+         if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
             if file is not None:
                 if file.mime_type != "application/x-bittorrent":
                     listener = MirrorListener(bot, update, pswd, isTar, extract)
                     tg_downloader = TelegramDownloadHelper(listener)
                     ms = update.message
                     tg_downloader.add_download(ms, f'{DOWNLOAD_DIR}{listener.uid}/', name)
-                    sendMessage(f"<b>📥 Your Telegram File Has Been Added To Download Queue.\n\n‼️ Do Not Forget To Read Group Rules.\n\n ✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
-                    if len(Interval) == 0:
-                        Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
                     return
                 else:
                     if qbit:
                         file.get_file().download(custom_path=f"/usr/src/app/{file.file_name}")
                         link = f"/usr/src/app/{file.file_name}"
+                         sendMessage(f"<b>📥 Your Telegram File Has Been Added To Download Queue.\n\n‼️ Do Not Forget To Read Group Rules.\n\n ✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
+                    if len(Interval) == 0:
+                        Interval.append(setInterval(DOWNLOAD_STATUS_UPDATE_INTERVAL, update_all_messages))
+                    return
                     else:
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-       sendMessage('No download source provided', bot, update)
+        sendMessage("𝙳𝚘𝚗'𝚝 𝚂𝚙𝚊𝚖 𝚙𝚕𝚎𝚊𝚜𝚎 😐\n\n𝙸𝚏 𝚢𝚘𝚞 𝚍𝚘𝚗'𝚝 𝚔𝚗𝚘𝚠 𝙷𝚘𝚠 𝚝𝚘 𝙼𝚒𝚛𝚛𝚘𝚛 𝚊𝚗𝚍 𝚞𝚜𝚎 𝚋𝚘𝚝 𝚝𝚑𝚎𝚗 𝚌𝚑𝚎𝚌𝚔 \n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp", bot, update)
         return
     
     try:
