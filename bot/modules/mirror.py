@@ -129,7 +129,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"<b>👋 Hey  {uname} your download has been 🙅‍♂️❌🙅‍♂️ Stopped 😐:</b>\n\n <b>⚠️ Reason</b>: <code>⚠️ {error} ⚠️</code>"
+        msg = f"{uname} your download has been stopped due to: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -192,7 +192,7 @@ class MirrorListener(listeners.MirrorListeners):
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
              msg += f'\n\n<b>👤 Uploader: </b>👉 {uname}\n\n✅ #Uploaded To AWS Mirror Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠🙂 \n\n<b>✥════ @Mani5GRockers ════✥</b>'
-            try:
+               try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
                 pass
@@ -273,7 +273,8 @@ def _mirror(bot, update, isTar=False, extract=False):
             if i is not None:
                 file = i
                 break
-if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
+
+        if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 0:
             if file is not None:
                 if file.mime_type != "application/x-bittorrent":
                     listener = MirrorListener(bot, update, pswd, isTar, extract)
@@ -291,7 +292,7 @@ if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
         sendMessage('No download source provided', bot, update)
         return
-    
+
     try:
         link = direct_link_generator(link)
     except DirectDownloadLinkException as e:
@@ -339,9 +340,9 @@ if not bot_utils.is_url(link) and not bot_utils.is_magnet(link) or len(link) == 
     elif bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage("🛑 Mega folder are blocked!", bot, update)
+            sendMessage("Mega folder are blocked!", bot, update)
         elif BLOCK_MEGA_LINKS:
-            sendMessage("🛑 Mega links are blocked!", bot, update)
+            sendMessage("Mega links are blocked!", bot, update)
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
