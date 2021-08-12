@@ -52,6 +52,7 @@ class MirrorListener(listeners.MirrorListeners):
     def clean(self):
         try:
             aria2.purge()
+            get_client().torrents_delete(torrent_hashes="all", delete_files=True)
             Interval[0].cancel()
             del Interval[0]
             delete_all_messages()
@@ -128,7 +129,7 @@ class MirrorListener(listeners.MirrorListeners):
             uname = f"@{self.message.from_user.username}"
         else:
             uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
-        msg = f"<b> Hey {uname} your download has been stopped</b>:\n\n🎄 <b>Reason</b>:\n\n👉 <code>{error}</code>"
+        msg = f"{uname} your download has been stopped due to: {error}"
         sendMessage(msg, self.bot, self.update)
         if count == 0:
             self.clean()
@@ -143,19 +144,19 @@ class MirrorListener(listeners.MirrorListeners):
 
     def onUploadComplete(self, link: str, size, files, folders, typ):
         with download_dict_lock:
-            msg = f'<b>📙 Filename: </b><code>{download_dict[self.uid].name()}</code>\n<b>📀 File Size: </b><code>{size}</code>'
+            msg = f'<b>Filename: </b><code>{download_dict[self.uid].name()}</code>\n<b>Size: </b><code>{size}</code>'
             if os.path.isdir(f'{DOWNLOAD_DIR}/{self.uid}/{download_dict[self.uid].name()}'):
-                msg += '\n<b>⚡ Type: </b><code>🗂 Folder</code>'
-                msg += f'\n<b>📚 SubFolders: </b><code>{folders}</code>'
-                msg += f'\n<b>📗 Files: </b><code>{files}</code>'
+                msg += '\n<b>Type: </b><code>Folder</code>'
+                msg += f'\n<b>SubFolders: </b><code>{folders}</code>'
+                msg += f'\n<b>Files: </b><code>{files}</code>'
             else:
-                msg += f'\n<b>⚙️ 𝐓𝐲𝐩𝐞 : </b><code>{typ}</code>'
+                msg += f'\n<b>Type: </b><code>{typ}</code>'
             buttons = button_build.ButtonMaker()
             if SHORTENER is not None and SHORTENER_API is not None:
                 surl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={link}&format=text').text
-                buttons.buildbutton("☁️ 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞", surl)
+                buttons.buildbutton("☁️ Drive Link", surl)
             else:
-                buttons.buildbutton("☁️ 𝗚-𝗗𝗥𝗜𝗩𝗘 𝗟𝗜𝗡𝗞", link)
+                buttons.buildbutton("☁️ Drive Link", link)
             LOGGER.info(f'Done Uploading {download_dict[self.uid].name()}')
             if INDEX_URL is not None:
                 url_path = requests.utils.quote(f'{download_dict[self.uid].name()}')
@@ -164,21 +165,21 @@ class MirrorListener(listeners.MirrorListeners):
                     share_url += '/'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
-                        buttons.buildbutton("📥 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞", siurl)
+                        buttons.buildbutton("⚡ Index Link", siurl)
                     else:
-                        buttons.buildbutton("📥 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞", share_url)
+                        buttons.buildbutton("⚡ Index Link", share_url)
                 else:
                     share_urls = f'{INDEX_URL}/{url_path}?a=view'
                     if SHORTENER is not None and SHORTENER_API is not None:
                         siurl = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_url}&format=text').text
                         siurls = requests.get(f'https://{SHORTENER}/api?api={SHORTENER_API}&url={share_urls}&format=text').text
-                        buttons.buildbutton("📥 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞", siurl)
+                        buttons.buildbutton("⚡ Index Link", siurl)
                         if VIEW_LINK:
-                            buttons.buildbutton("📽 𝗪𝗔𝗧𝗖𝗛", siurls)
+                            buttons.buildbutton("🌐 View Link", siurls)
                     else:
-                        buttons.buildbutton("📥 𝗜𝗡𝗗𝗘𝗫 𝗟𝗜𝗡𝗞", share_url)
+                        buttons.buildbutton("⚡ Index Link", share_url)
                         if VIEW_LINK:
-                            buttons.buildbutton("📽 𝗪𝗔𝗧𝗖𝗛", share_urls)
+                            buttons.buildbutton("🌐 View Link", share_urls)
             if BUTTON_FOUR_NAME is not None and BUTTON_FOUR_URL is not None:
                 buttons.buildbutton(f"{BUTTON_FOUR_NAME}", f"{BUTTON_FOUR_URL}")
             if BUTTON_FIVE_NAME is not None and BUTTON_FIVE_URL is not None:
@@ -190,7 +191,7 @@ class MirrorListener(listeners.MirrorListeners):
             else:
                 uname = f'<a href="tg://user?id={self.message.from_user.id}">{self.message.from_user.first_name}</a>'
             if uname is not None:
-                msg += f'\n\n<b>👤 Uploader: </b>👉 {uname}✅ #Uploaded To Team Drive ✓ \n\n⛔ 𝘿𝙤 𝙣𝙤𝙩 𝙨𝙝𝙖𝙧𝙚 𝙄𝙣𝙙𝙚𝙭 𝙇𝙞𝙣𝙠 🙂 \n\n✥════ @Mani5GRockers ════✥'
+                msg += f'\n\ncc: {uname}'
             try:
                 fs_utils.clean_download(download_dict[self.uid].path())
             except FileNotFoundError:
@@ -289,8 +290,8 @@ def _mirror(bot, update, isTar=False, extract=False):
                         link = file.get_file().file_path
 
     if not bot_utils.is_url(link) and not bot_utils.is_magnet(link):
-          sendMessage('❌ Opps 👆 ! Not 🤦 Like That ❌\n\n💁‍♀️ 𝐇𝐎𝐖 𝐓𝐎 𝐌𝐈𝐑𝐑𝐎𝐑 ?\n\n📖 Read Document 📖\n\n 👉 https://awslink.in/awsmirrorzonehelp', bot, update)
-    return
+        sendMessage('No download source provided', bot, update)
+        return
 
     try:
         link = direct_link_generator(link)
