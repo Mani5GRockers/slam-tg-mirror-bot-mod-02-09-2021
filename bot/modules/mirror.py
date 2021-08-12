@@ -340,9 +340,9 @@ def _mirror(bot, update, isTar=False, extract=False):
     elif bot_utils.is_mega_link(link):
         link_type = get_mega_link_type(link)
         if link_type == "folder" and BLOCK_MEGA_FOLDER:
-            sendMessage("Mega folder are blocked!", bot, update)
+            sendMessage("❌ Mega folder are blocked!", bot, update)
         elif BLOCK_MEGA_LINKS:
-            sendMessage("Mega links are blocked bcoz mega downloading is too much unstable and buggy. mega support will be added back after fix", bot, update)
+            sendMessage("❌ Mega links are blocked bcoz mega downloading is too much unstable and buggy. mega support will be added back after fix", bot, update)
         else:
             mega_dl = MegaDownloadHelper()
             mega_dl.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener)
@@ -353,8 +353,7 @@ def _mirror(bot, update, isTar=False, extract=False):
 
     else:
         ariaDlManager.add_download(link, f'{DOWNLOAD_DIR}/{listener.uid}/', listener, name)
-        sendStatusMessage(f"<b>📥 Your URL Link Has Been Added To Download Queue.\n\nAWS Mirror Size Is <u>500GB</u> In This Group.\n\n‼️ Do Not Forget To Read Group Rules.\n\n✅ Check Progress : /{BotCommands.StatusCommand}</b>", bot, update)
-
+        sendStatusMessage(update, bot)
 
 def mirror(update, context):
     _mirror(context.bot, update)
