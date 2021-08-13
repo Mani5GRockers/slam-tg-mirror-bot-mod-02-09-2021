@@ -208,8 +208,8 @@ class TorrentSearch:
             inline.append(nextBtn)
 
         res_lim = min(self.RESULT_LIMIT, len(self.response) - self.RESULT_LIMIT*self.index)
-        result = f"**Page - {self.index+1}**\n\n"
-        result += "\n\n=======================\n\n".join(
+        result = f"**✥════ @awsmirrorzone ════✥\n\n📖 Page - {self.index+1}**\n\n"
+        result += "\n\n✥════ @Mani5GRockers ════✥\n\n".join(
             self.get_formatted_string(self.response[self.response_range[self.index]+i])
             for i in range(res_lim)
         )
@@ -222,11 +222,11 @@ class TorrentSearch:
 
     async def find(self, client, message):
         if len(message.command) < 2:
-            await message.reply_text(f"Usage: /{self.command} query")
+            await message.reply_text(f"📊 Usage: /{self.command} query")
             return
 
         query = urlencode(message.text.split(None, 1)[1])
-        self.message = await message.reply_text("Searching")
+        self.message = await message.reply_text("🧲 Torrent - 🧲 Magnet link 🔍 Searching..")
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"{self.source}/{query}") as resp:
@@ -238,7 +238,7 @@ class TorrentSearch:
                     self.response = result
                     self.response_range = range(0, len(self.response), self.RESULT_LIMIT)
         except:
-            await self.message.edit("No Results Found.")
+            await self.message.edit("🧲 No Results Found ❗️")
             return
         await self.update_message()
 
