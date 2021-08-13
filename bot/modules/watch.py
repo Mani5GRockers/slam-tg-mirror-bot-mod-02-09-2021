@@ -20,7 +20,7 @@ def _watch(bot: Bot, update, isTar=False):
         msg = f"\n✥════ @Mani5GRockers ════✥\n\n👉 /{BotCommands.WatchCommand} [youtube-dl supported link] [quality] |[CustomName] to mirror with youtube-dl for \n@awsmirrorzone\n\n"
         msg += "<b>★ Note: Quality and custom name are optional</b>\n\n★ Example of quality: audio, 144, 240, 360, 480, 720, 1080, 2160."
         msg += "\n\n★ If you want to use custom filename, enter it after |"
-        msg += f"\n\n★ Example: ✅\n\n<code> /{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |Test File Video</code>\n\n"
+        msg += f"\n\n★ Example: ✅\n\n<code> /{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |Test File Video</code>\n\n<code> /{BotCommands.WatchCommand} https://youtu.be/Pk_TthHfLeE 720 |Test File Video</code>\n\n"
         msg += "★ This file will be downloaded in 720p quality and it's name will be <b>Test File Video\n\n</b>"  
         msg += "★ This file will be downloaded in 720p quality and it's Auto Format for .mkv name will be <b>Test File Video.mkv\n\n\n✥════ @Mani5GRockers ════✥</b>"  
         sendMessage(msg, bot, update)
