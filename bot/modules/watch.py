@@ -18,7 +18,7 @@ def _watch(bot: Bot, update, isTar=False):
         link = message_args[1]
     except IndexError:
         msg = f"\n✥════ @Mani5GRockers ════✥\n\n👉 /{BotCommands.WatchCommand} [youtube-dl supported link] [quality] |[CustomName] to mirror with youtube-dl for \n@awsmirrorzone\n\n"
-        msg += "<b>★ Note: Quality and custom name are optional</b>\n\n★ Example of quality: audio, 144, 240, 360, 480, 720, 1080, 1440, 2160, 4320."
+        msg += "<b>★ Note: Quality and custom name are optional</b>\n\n★ Example of quality:\n\n✅ audio, 144, 240, 360, 480, 720, 1080, 1440, 2160, 4320."
         msg += "\n\n★ If you want to use custom filename, enter it after |"
         msg += f"\n\n★ Example: ✅\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI 720 |Test File Video</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI 720</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI |Test File Video</code>\n\n"
         msg += "★ This file will be downloaded in 720p quality and it's name will be <b>Test File Video\n\n</b>"
