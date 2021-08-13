@@ -34,6 +34,12 @@ li {
 
 p { font-size: 12px; margin: 24px;}
 </style>
+<style>
+.footer {
+    display: none;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 <h1>slam-tg-mirror-bot: <a href="https://github.com/breakdowns/slam-tg-mirror-bot">@Github</a></h1>
@@ -112,6 +118,12 @@ code_page = """
 Slam Torrent Files
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.footer {
+    display: none;
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -277,7 +289,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<!DOCTYPE html><style>.footer {display: none;}</style><link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"><center><b>Mani5GRockers</b></center>",content_type="text/html")
+    return web.Response(text="<center><b>Mani5GRockers</b></center>",content_type="text/html")
 
 async def e404_middleware(app, handler):
 
