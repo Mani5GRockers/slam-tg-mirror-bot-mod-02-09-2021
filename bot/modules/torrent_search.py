@@ -182,7 +182,7 @@ class TorrentSearch:
         string = self.RESULT_STR.format(**values)
         extra = ""
         if "Files" in values:
-            tmp_str = "★ [{Quality} - {Type} ({Size})]({Torrent}): `{magnet}`"
+            tmp_str = "🧲 TorrentLink: [{Quality} - {Type} ({Size})]({Torrent})\n\n🧲 MagnetLink: `{magnet}`"
             extra += "\n".join(
                 tmp_str.format(**f, magnet=self.format_magnet(f['Magnet']))
                 for f in values['Files']
@@ -190,7 +190,7 @@ class TorrentSearch:
         else:
             magnet = values.get('magnet', values.get('Magnet'))  # Avoid updating source dict
             if magnet:
-                extra += f"🧲 Magnet Link:\n\n `{self.format_magnet(magnet)}`"
+                extra += f"🧲 MagnetLink:\n\n `{self.format_magnet(magnet)}`"
         if (extra):
             string += "\n" + extra
         return string
@@ -222,11 +222,11 @@ class TorrentSearch:
 
     async def find(self, client, message):
         if len(message.command) < 2:
-            await message.reply_text(f"👉 How to Use ?\nExample: \n\n /{self.command} Search Name")
+            await message.reply_text(f"👉 How to Use Torrent Search ?\nExample: \n\n /{self.command} Search Name")
             return
 
         query = urlencode(message.text.split(None, 1)[1])
-        self.message = await message.reply_text("🧲 Magnet link 🔍 Searching...")
+        self.message = await message.reply_text("🧲 MagnetLink 🔍 Searching...")
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get(f"{self.source}/{query}") as resp:
@@ -280,7 +280,7 @@ RESULT_STR_YTS = (
     "★ Rating: {Rating}\n"
     "★ Likes: {Likes}\n"
     "★ Duration: {Runtime}\n"
-    "★ Language: {Language}"
+    "★ Language: {Language}\n\n"
 )
 RESULT_STR_EZTV = (
     "🗂 Name: `{Name}`\n"
