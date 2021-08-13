@@ -289,7 +289,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<center><b>Mani5GRockers</b></center>",content_type="text/html")
+    return web.Response(text="<head><link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"></head><center><b>Mani5GRockers</b></center>",content_type="text/html")
 
 async def e404_middleware(app, handler):
 
