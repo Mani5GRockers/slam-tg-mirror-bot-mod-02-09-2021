@@ -320,17 +320,19 @@ for command, value in torrents_dict.items():
 
 def searchhelp(update, context):
     help_string = '''
-<b>🚦 Torrent 🧲 Search Site 🔍\n\n</b>
-• /nyaasi <i>[search name]</i>
-• /sukebei <i>[search name]</i>
-• /1337x <i>[search name]</i>
-• /piratebay <i>[search name]</i>
-• /tgx <i>[search name]</i>
-• /yts <i>[search name]</i>
-• /eztv <i>[search name]</i>
-• /torlock <i>[search name]</i>
-• /rarbg <i>[search name]</i>
-• /ts <i>[search name]</i>
+<b>🚦 Torrent 🧲 Search Site 🔍\n</b>
+<b>✥════ @Mani5GRockers ════✥\n</b>
+★ /nyaasi <i>[search name]</i>
+★ /sukebei <i>[search name]</i>
+★ /1337x <i>[search name]</i>
+★ /piratebay <i>[search name]</i>
+★ /tgx <i>[search name]</i>
+★ /yts <i>[search name]</i>
+★ /eztv <i>[search name]</i>
+★ /torlock <i>[search name]</i>
+★ /rarbg <i>[search name]</i>
+★ /ts <i>[search name]</i>
+<b>\n✥════ @Mani5GRockers ════✥</b>
 '''
     sendMessage(help_string, context.bot, update)
     
