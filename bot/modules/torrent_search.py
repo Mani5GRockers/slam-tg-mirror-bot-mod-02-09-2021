@@ -55,7 +55,7 @@ async def return_search(query, page=1, sukebei=False):
 <b>\n🗃 Size:</b> <code>{i["nyaa_size"]}</code>
 <b>👤 Seeders:</b> <code>{i["nyaa_seeders"]}</code>
 <b>🔄 Leechers:</b> <code>{i["nyaa_leechers"]}</code>
-<b>🗄 Category:</b> <code>{i["nyaa_category"]}</code>\n\n'''
+<b>🗄 Category:</b> <code>{i["nyaa_category"]}</code>\n\n✥════ @Mani5GRockers ════✥\n'''
                 futtext = text + newtext
                 if (a and not a % 10) or len((await parser.parse(futtext))['message']) > 4096:
                     results.append(text)
