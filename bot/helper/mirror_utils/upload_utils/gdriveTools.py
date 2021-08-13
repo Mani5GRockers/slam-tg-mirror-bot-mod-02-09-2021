@@ -117,7 +117,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': '👲 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗗 𝗨𝗦𝗜𝗡𝗚 AWS 𝗠𝗜𝗥𝗥𝗢𝗥 𝗕𝗢𝗧',
+            'description': '🤴 Mani5GRockers 🤴',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -171,7 +171,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': '👲 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗗 𝗨𝗦𝗜𝗡𝗚 AWS 𝗠𝗜𝗥𝗥𝗢𝗥 𝗕𝗢𝗧',
+            'description': '🤴 Mani5GRockers 🤴',
             'mimeType': mime_type,
         }
         try:
