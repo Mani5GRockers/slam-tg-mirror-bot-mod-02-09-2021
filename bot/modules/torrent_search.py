@@ -159,7 +159,7 @@ class TorrentSearch:
     response = None
     response_range = None
 
-    RESULT_LIMIT = 4
+    RESULT_LIMIT = 5
     RESULT_STR = None
 
     def __init__(self, command: str, source: str, result_str: str):
@@ -320,7 +320,7 @@ for command, value in torrents_dict.items():
 
 def searchhelp(update, context):
     help_string = '''
-<b>🚦 Torrent 🧲 Search 🔍</b>
+<b>🚦 Torrent 🧲 Search 🔍\n\n</b>
 • /nyaasi <i>[search name]</i>
 • /sukebei <i>[search name]</i>
 • /1337x <i>[search name]</i>
