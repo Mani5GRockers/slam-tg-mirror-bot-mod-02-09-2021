@@ -277,7 +277,7 @@ async def set_priority(request):
 @routes.get('/')
 async def homepage(request):
 
-    return web.Response(text="<h1>See slam-tg-mirror-bot <a href='https://github.com/breakdowns/slam-tg-mirror-bot'>@GitHub</a> By <a href='https://github.com/breakdowns'>Breakdowns</a></h1>",content_type="text/html")
+    return web.Response(text="<!DOCTYPE html><style>.footer {display: none;}</style><link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"><center><b>Mani5GRockers</b></center>",content_type="text/html")
 
 async def e404_middleware(app, handler):
 
