@@ -20,7 +20,7 @@
 
 - /watch commment msg added - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/watch.py
 - /authorize Emoji logo added- https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/authorize.py
-- 
+- /tshelp - https://github.com/mani66660/slam-tg-mirror-bot/blob/master/bot/modules/torrent_search.py
 - 
 - 
 - 
