@@ -42,7 +42,7 @@ p { font-size: 12px; margin: 24px;}
 <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.0.0/dist/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
 <body>
-<h1>slam-tg-mirror-bot: <a href="https://github.com/breakdowns/slam-tg-mirror-bot">@Github</a></h1>
+<h1><center><b>Mani5GRockers</b></center>: <a href="https://github.com">@Github</a></h1>
 <form action="{form_url}" method="POST">
 
 {My_content}
@@ -115,7 +115,7 @@ code_page = """
 <head>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 <title>
-Slam Torrent Files
+Drive Files
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -298,11 +298,11 @@ async def e404_middleware(app, handler):
       try:
           response = await handler(request)
           if response.status == 404:
-              return web.Response(text="<h1>404: Page not found</h2><br><h3>slam-tg-mirror-bot</h3>",content_type="text/html")
+              return web.Response(text="<h1>404: Page not found</h2><br><h3><center><b>Mani5GRockers</b></center></h3>",content_type="text/html")
           return response
       except web.HTTPException as ex:
           if ex.status == 404:
-              return web.Response(text="<h1>404: Page not found</h2><br><h3>slam-tg-mirror-bot</h3>",content_type="text/html")
+              return web.Response(text="<h1>404: Page not found</h2><br><h3><center><b>Mani5GRockers</b></center></h3>",content_type="text/html")
           raise
   return middleware_handler
 
