@@ -117,7 +117,7 @@ class GoogleDriveHelper:
                                      resumable=False)
         file_metadata = {
             'name': file_name,
-            'description': '🤴 Mani5GRockers 🤴',
+            'description': '❤️ <b>Mani5GRockers</b> ❤️',
             'mimeType': mime_type,
         }
         if parent_id is not None:
@@ -171,7 +171,7 @@ class GoogleDriveHelper:
         # File body description
         file_metadata = {
             'name': file_name,
-            'description': '🤴 Mani5GRockers 🤴',
+            'description': '❤️ <b>Mani5GRockers</b> ❤️',
             'mimeType': mime_type,
         }
         try:
@@ -417,7 +417,7 @@ class GoogleDriveHelper:
                 except:
                     typeee = 'File' 
                 try:
-                    msg += f'\n<b>🗃 𝐓𝐨𝐭𝐚𝐥 𝐒𝐢𝐳𝐞: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
+                    msg += f'\n<b>🗃 𝗙𝗶𝗹𝗲 𝐒𝐢𝐳𝐞: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>'
                     msg += f'\n<b>⚙️ 𝐓𝐲𝐩𝐞: </b><code>{typeee}</code>'
                 except TypeError:
                     pass
