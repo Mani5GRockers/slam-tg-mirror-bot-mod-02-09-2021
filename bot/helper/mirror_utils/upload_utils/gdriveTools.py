@@ -584,7 +584,7 @@ class GoogleDriveHelper:
                                                orderBy='name asc').execute()
         content_count = 0
         if response["files"]:
-            msg += f'<h4>{len(response["files"])} Results: {fileName}</h4><br><br>'
+            msg += f'<h4>{len(response["files"])} 📁 Results: {fileName}</h4><br><br>'
             for file in response.get('files', []):
                 if file.get('mimeType') == "application/vnd.google-apps.folder":  # Detect Whether Current Entity is a Folder or File.
                     furl = f"https://drive.google.com/drive/folders/{file.get('id')}"
@@ -682,7 +682,7 @@ class GoogleDriveHelper:
                 msg += f'\n<b>📚 𝐒𝐮𝐛𝐅𝐨𝐥𝐝𝐞𝐫𝐬: </b><code>{self.total_folders}</code>'
                 msg += f'\n<b>📁 𝐅𝐢𝐥𝐞𝐬: </b><code>{self.total_files}</code>'
             else:
-                msg += f'<b>Filename: </b><code>{name}</code>'
+                msg += f'<b>🗂 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲: </b><code>{name}</code>'
                 try:
                     typee = drive_file['mimeType']
                 except:
