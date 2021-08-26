@@ -1,8 +1,5 @@
 FROM breakdowns/mega-sdk-python:latest
-FROM python:3-alpine
 FROM priiiiyo/mega-sdk-python:latest
-FROM ghcr.io/iamliquidx/mirrorx
-FROM ghcr.io/xcodershub/torrentleechx:latest
 
 WORKDIR /usr/src/app
 RUN chmod 777 /usr/src/app
