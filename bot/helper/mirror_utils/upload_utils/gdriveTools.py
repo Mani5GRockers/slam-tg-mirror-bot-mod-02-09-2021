@@ -365,7 +365,7 @@ class GoogleDriveHelper:
         except (KeyError,IndexError):
             msg = "Google Drive ID could not be found in the provided link"
             return msg
-        msg = ""
+        msg = "\n✥═══ @Mani5GRockers ═══✥\n\n"
         LOGGER.info(f"File ID: {file_id}")
         try:
             meta = self.getFileMetadata(file_id)
@@ -404,7 +404,6 @@ class GoogleDriveHelper:
                     buttons.buildbutton(f"{BUTTON_SIX_NAME}", f"{BUTTON_SIX_URL}")
             else:
                 file = self.copyFile(meta.get('id'), parent_id)
-                msg += "\n✥═══ @Mani5GRockers ═══✥\n\n"
                 msg += f'<b>🗂 𝗙𝗶𝗹𝗲𝗡𝗮𝗺𝗲 : </b><code>{file.get("name")}</code>'
                 durl = self.__G_DRIVE_BASE_DOWNLOAD_URL.format(file.get("id"))
                 buttons = button_build.ButtonMaker()
