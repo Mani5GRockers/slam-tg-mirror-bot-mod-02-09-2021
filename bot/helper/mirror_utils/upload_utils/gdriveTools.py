@@ -365,7 +365,7 @@ class GoogleDriveHelper:
         except (KeyError,IndexError):
             msg = "Google Drive ID could not be found in the provided link"
             return msg
-        msg = "\n✥═══ @Mani5GRockers ═══✥\n\n"
+        msg = "\n✥═══ @awsmirrorzone ═══✥\n\n"
         LOGGER.info(f"File ID: {file_id}")
         try:
             meta = self.getFileMetadata(file_id)
