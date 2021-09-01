@@ -14,21 +14,18 @@ def speedtest(update, context):
     test.upload()
     test.results.share()
     result = test.results.dict()
-    string_speed = f'<b>╭──「  🚦 BOT SPEED TEST 🚦 」 </b>\n' \
-            f'<b>│</b>\n' \
-            f'<b>├  🌐 Server Detail 📊</b>\n' \
-            f'<b>├  💳 Name:</b> <code>{result['server']['name']}</code>\n' \
-            f'<b>├  ⛳️ Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code></b>\n' \
-            f'<b>├  💰 Sponsor:</b> <code>{result['server']['sponsor']}</code>\n' \
-            f'<b>├  🏬 ISP:</b> <code>{result['client']['isp']}</code>\n' \
-            f'<b>│</b>\n' \
-            f'<b>├  🚀 SpeedTest Results 💨</b>\n' \
-            f'<b>├  🔺 Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>\n' \
-            f'<b>├  🔻 Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>\n' \
-            f'<b>├  📶 Ping:</b> <code>{result['ping']} ms</code>\n' \
-            f'<b>├  🏬 ISP:</b> <code>{result['client']['isp']}</code>\n' \
-            f'<b>│</b>\n' \
-            f'<b>╰──「 👨‍💻 @Mani5GRockers 」</b>'
+    string_speed = f'''
+<b>🖥️ Server Detail  🖥️</b>
+<b>💳 Name:</b> <code>{result['server']['name']}</code>
+<b>⛳️ Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code>
+<b>💰 Sponsor:</b> <code>{result['server']['sponsor']}</code>
+<b>🏬 ISP:</b> <code>{result['client']['isp']}</code>
+    
+<b>🚀 SpeedTest Results 💨</b>
+<b>🔺 Upload:</b> <code>{speed_convert(result['upload'] / 8)}</code>
+<b>🔻 Download:</b>  <code>{speed_convert(result['download'] / 8)}</code>
+<b>📶 Ping:</b> <code>{result['ping']} ms</code>
+<b>🏬 ISP:</b> <code>{result['client']['isp']}</code>
 '''
     editMessage(string_speed, speed)
 
