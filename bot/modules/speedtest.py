@@ -16,7 +16,7 @@ def speedtest(update, context):
     result = test.results.dict()
     string_speed = f'<b>╭──「  🚦 BOT SPEED TEST 🚦 」 </b>\n' \
             f'<b>│</b>\n' \
-            f'<b>├  🖥️ Server Detail  🖥️</b>\n' \
+            f'<b>├  🌐 Server Detail 📊</b>\n' \
             f'<b>├  💳 Name:</b> <code>{result['server']['name']}</code>\n' \
             f'<b>├  ⛳️ Country:</b> <code>{result['server']['country']}, {result['server']['cc']}</code></b>\n' \
             f'<b>├  💰 Sponsor:</b> <code>{result['server']['sponsor']}</code>\n' \
