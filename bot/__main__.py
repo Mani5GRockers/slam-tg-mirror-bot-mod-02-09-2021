@@ -59,8 +59,8 @@ This bot can mirror all your links to Google Drive!
 Type /{BotCommands.HelpCommand} to get a list of available commands
 '''
     buttons = button_build.ButtonMaker()
-    buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/awsmirror")
-    buttons.buildbutton("🦸 Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ 🦸‍♂️", "https://t.me/aws_public_chat")
+    buttons.buildbutton("Ⓜ️ ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ Ⓜ️", "https://t.me/awsmirrorzone")
+    buttons.buildbutton("🦸 Chat ᴍɪʀʀᴏʀ ɢʀᴏᴜᴘ 🦸‍♂️", "https://awslink.in/awsmirrorzone-support")
     buttons.buildbutton("⚙️ AWS BOT List ⚙️", "http://t.me/mani5grockersbot")
     buttons.buildbutton("🌐 Website 🌐", "https://bitly.awslink.in/mani5grockers")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(2))
@@ -219,6 +219,7 @@ botcmds = [
         (f'{BotCommands.ListCommand}','Searches files in Drive'),
         (f'{BotCommands.StatusCommand}','Get Mirror Status message'),
         (f'{BotCommands.StatsCommand}','Bot Usage Stats'),
+        (f'{BotCommands.SpeedCommand}','Bot Speedtest'),
         (f'{BotCommands.PingCommand}','Ping the Bot'),
         (f'{BotCommands.RestartCommand}','Restart the bot [owner/sudo only]'),
         (f'{BotCommands.LogCommand}','Get the Bot Log [owner/sudo only]'),
