@@ -313,7 +313,6 @@ torrents_dict = {
     'rarbg': {'source': "https://api.eunhamirror.repl.co/api/rarbg/", 'result_str': RESULT_STR_RARBG},
     'ts': {'source': "https://api.eunhamirror.repl.co/api/all/", 'result_str': RESULT_STR_ALL}
 }
-
 #torrents_dict = {
     #'1337x': {'source': "https://torrents--api.herokuapp.com/api/1337x/", 'result_str': RESULT_STR_1337},
     #'piratebay': {'source': "https://torrents--api.herokuapp.com/api/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
