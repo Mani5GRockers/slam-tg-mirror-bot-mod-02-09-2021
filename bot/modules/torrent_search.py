@@ -304,15 +304,26 @@ RESULT_STR_ALL = (
 )
 
 torrents_dict = {
-    '1337x': {'source': "https://torrents--api.herokuapp.com/api/1337x/", 'result_str': RESULT_STR_1337},
-    'piratebay': {'source': "https://torrents--api.herokuapp.com/api/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
-    'tgx': {'source': "https://torrents--api.herokuapp.com/api/tgx/", 'result_str': RESULT_STR_TGX},
-    'yts': {'source': "https://torrents--api.herokuapp.com/api/yts/", 'result_str': RESULT_STR_YTS},
-    'eztv': {'source': "https://torrents--api.herokuapp.com/api/eztv/", 'result_str': RESULT_STR_EZTV},
-    'torlock': {'source': "https://torrents--api.herokuapp.com/api/torlock/", 'result_str': RESULT_STR_TORLOCK},
-    'rarbg': {'source': "https://torrents--api.herokuapp.com/api/rarbg/", 'result_str': RESULT_STR_RARBG},
-    'ts': {'source': "https://torrents--api.herokuapp.com/api/all/", 'result_str': RESULT_STR_ALL}
+    '1337x': {'source': "https://api.eunhamirror.repl.co/api/1337x/", 'result_str': RESULT_STR_1337},
+    'piratebay': {'source': "https://api.eunhamirror.repl.co/api/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
+    'tgx': {'source': "https://api.eunhamirror.repl.co/api/tgx/", 'result_str': RESULT_STR_TGX},
+    'yts': {'source': "https://api.eunhamirror.repl.co/api/yts/", 'result_str': RESULT_STR_YTS},
+    'eztv': {'source': "https://api.eunhamirror.repl.co/api/eztv/", 'result_str': RESULT_STR_EZTV},
+    'torlock': {'source': "https://api.eunhamirror.repl.co/api/torlock/", 'result_str': RESULT_STR_TORLOCK},
+    'rarbg': {'source': "https://api.eunhamirror.repl.co/api/rarbg/", 'result_str': RESULT_STR_RARBG},
+    'ts': {'source': "https://api.eunhamirror.repl.co/api/all/", 'result_str': RESULT_STR_ALL}
 }
+
+#torrents_dict = {
+    #'1337x': {'source': "https://torrents--api.herokuapp.com/api/1337x/", 'result_str': RESULT_STR_1337},
+    #'piratebay': {'source': "https://torrents--api.herokuapp.com/api/piratebay/", 'result_str': RESULT_STR_PIRATEBAY},
+    #'tgx': {'source': "https://torrents--api.herokuapp.com/api/tgx/", 'result_str': RESULT_STR_TGX},
+    #'yts': {'source': "https://torrents--api.herokuapp.com/api/yts/", 'result_str': RESULT_STR_YTS},
+    #'eztv': {'source': "https://torrents--api.herokuapp.com/api/eztv/", 'result_str': RESULT_STR_EZTV},
+    #'torlock': {'source': "https://torrents--api.herokuapp.com/api/torlock/", 'result_str': RESULT_STR_TORLOCK},
+    #'rarbg': {'source': "https://torrents--api.herokuapp.com/api/rarbg/", 'result_str': RESULT_STR_RARBG},
+    #'ts': {'source': "https://torrents--api.herokuapp.com/api/all/", 'result_str': RESULT_STR_ALL}
+#}
 
 torrent_handlers = []
 for command, value in torrents_dict.items():
@@ -320,7 +331,7 @@ for command, value in torrents_dict.items():
 
 def searchhelp(update, context):
     help_string = '''
-<b>🚦 Torrent 🧲 Search Site 🔍\n</b>
+<b>🧲 Torrent 🔍 Search 🚦 Sites 🧲\n</b>
 <b>✥════ @Mani5GRockers ════✥\n</b>
 ★ /nyaasi <i>[search name]</i>
 ★ /sukebei <i>[search name]</i>
