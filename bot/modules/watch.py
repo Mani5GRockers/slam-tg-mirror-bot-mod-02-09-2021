@@ -22,7 +22,7 @@ def _watch(bot: Bot, update, isTar=False):
         msg += "\n\n★ If you want to use custom filename, enter it after |"
         msg += f"\n\n★ Example: ✅\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI audio</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI 720</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI |Test File Video</code>\n\n<code> /{BotCommands.WatchCommand} https://www.youtube.com/watch?v=ahy5o5nT4oI 720 |Test File Video</code>\n\n"
         msg += "★ This file will be downloaded in 720p quality and it's name will be <b>Test File Video\n\n</b>"
-        msg += "★ This file will be downloaded in Auto Format for .mkv name will be <b>Test File Video.mkv\n\n\n✥════ @Mani5GRockers ════✥</b>"
+        msg += "★ This file will be downloaded in Auto Format for .mp4 .mkv .webp  name will be <b>Test File Video.mkv\n\n\n✥════ @Mani5GRockers ════✥</b>"
         sendMessage(msg, bot, update)
         return
     
