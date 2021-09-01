@@ -50,12 +50,12 @@ async def return_search(query, page=1, sukebei=False):
                 splitted = urlsplit(link)
                 if splitted.scheme == 'magnet' and splitted.query:
                     link = f'<code>{link}</code>'
-                newtext = f'''<b>{a + 1}.</b> <code>{html.escape(i["title"])}</code>
+                newtext = f'''<b>\n\n✥════ @awsmirrorzone ════✥\n\n{a + 1}.</b> <code>{html.escape(i["title"])}</code>
 <b>\n🧲 TorrentLink:\n\n</b> <code>{link}</code>
 <b>\n🗃 Size:</b> <code>{i["nyaa_size"]}</code>
 <b>👤 Seeders:</b> <code>{i["nyaa_seeders"]}</code>
 <b>🔄 Leechers:</b> <code>{i["nyaa_leechers"]}</code>
-<b>🗄 Category:</b> <code>{i["nyaa_category"]}</code>\n\n✥════ @Mani5GRockers ════✥\n\n'''
+<b>🗄 Category:</b> <code>{i["nyaa_category"]}</code>'''
                 futtext = text + newtext
                 if (a and not a % 10) or len((await parser.parse(futtext))['message']) > 4096:
                     results.append(text)
